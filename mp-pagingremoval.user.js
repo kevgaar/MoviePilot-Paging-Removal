@@ -17,6 +17,9 @@ if(pageCheck.length > 0) {
   if(baseReq.search(/#/) > 0) {  //catch hash
     baseReq = baseReq.split('#')[0];
     window.location.href = baseReq;
+  } else if(baseReq.search(/\?/) > 0) {
+    baseReq = baseReq.split('?')[0];
+    window.location.href = baseReq;
   } else {  //do execute only if theres no hash existing
     var startReq = baseReq;
     fixMPLayout();
